@@ -1,60 +1,45 @@
- # Feeds and Speeds Calculator
+# Feeds and Speeds Calculator
 
-This is a web-based application designed to help machinists and CNC programmers determine the optimal spindle speed (RPM) and feed rate for their cutting operations. The application supports both Imperial and Metric units.
+A simple calculator for machinists and CNC programmers. Input tool diameter, material, and chip load—get RPM and feed rate in Imperial or Metric.
 
 ## Features
 
--   Calculate Spindle Speed (RPM)
--   Calculate Feed Rate (IPM or mm/min)
+- Calculates spindle speed (RPM) from surface speed (SFM or m/min) and tool diameter  
+- Calculates feed rate (IPM or mm/min) from RPM, tooth load, and tooth count  
+- No dependencies. Runs on PHP 8.x, MySQL, Nginx — standard LAMP stack
 
-## Installation
+## Install
 
-1. **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    ```
-2. **Navigate to the project directory:**
-    ```bash
-    cd feeds-and-speeds-calculator
-    ```
-3. **Install dependencies:**
-    ```bash
-    composer install
-    ```
-4. **Create a copy of the `.env.example` file:**
-    ```bash
-    cp .env.example .env
-    ```
-5. **Generate an application key:**
-    ```bash
-    php artisan key:generate
-    ```
-6. **Run the database migrations:**
-    ```bash
-    php artisan migrate
-    ```
-7. **Start the development server:**
-    ```bash
-    php artisan serve
-    ```
-8. Open your browser and navigate to `http://127.0.0.1:8000/calculator`.
+```bash
+git clone <repository-url>
+cd feeds-and-speeds-calculator
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
 
-## Technical Details
+Then open `http://127.0.0.1:8000/calculator`.
 
-The application is built using Laravel, a PHP web application framework that emphasizes simplicity, elegance, and clean coding. The front-end is implemented using plain HTML, CSS, and JavaScript, with some additional libraries such as jQuery for enhanced functionality.
+I built this because I got tired of digging through PDF charts or hunting for working web tools that broke after 2012.
 
-For the development environment, the project uses PHP 8.x as the server-side language, MySQL as the database management system, and Nginx as the web server. The application also utilizes a build tool called Laravel Mix for asset compilation during development and production.
+## Technical bits
 
-In terms of routing, the application follows standard RESTful conventions. For example, to access the calculator, navigate to `http://127.0.0.1:8000/calculator`.
+- Laravel 11 (PHP 8.2+)  
+- MySQL 8  
+- Front-end: vanilla JS + Bootstrap 5 (no bloat)  
+- Asset pipeline via Laravel Mix  
+- Routes: `/calculator` (GET), `/calculate` (POST)
 
-## Contribution
+## Contributing
 
-Contributions are always welcome! If you'd like to contribute, please fork the repository and submit a pull request with your changes. Before submitting, please ensure that your code adheres to the PSR-2 coding standards and follows Laravel's conventions.
+Fork, make a branch, send a PR. Tests preferred but not required. Keep it PSR-12 and follow Laravel conventions.
 
 ## License
 
-This project is open-source and released under the MIT License. For more information, see the `LICENSE` file in this repository.
+MIT. See `LICENSE` for details.
 
-## Contact
+## Hit me up
 
-If you encounter any issues or have questions, feel free to reach out via email at [your.email@example.com](mailto:your.email@example.com). I'll do my best to help!
+Got a bug or idea? Email me: [your.email@example.com](mailto:your.email@example.com)
