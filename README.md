@@ -43,3 +43,7 @@ MIT. See `LICENSE` for details.
 ## Hit me up
 
 Got a bug or idea? Email me: [your.email@example.com](mailto:your.email@example.com)
+
+## More from Karelseaat
+
+For more projects and experiments, visit my GitHub Pages site: [karelseaat.github.io](https://karelseaat.github.io/)
